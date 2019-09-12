@@ -10,9 +10,6 @@
   <!-- Fluid density -->
   <xacro:property name="rho" value="1028"/>
 
-  <!-- Loading vehicle's specific macros -->
-  <xacro:include filename="$(find heron_description)/urdf/snippets.xacro"/>
-
   <material name="gray"><color rgba="0.7 0.7 0.7 1.0"/></material>
   <material name="dark_gray"><color rgba="0.2 0.2 0.2 1.0"/></material>
   <material name="yellow"><color rgba="0.8 0.8 0.0 1.0"/></material>
@@ -102,9 +99,6 @@
 
     <!-- Set up hydrodynamic plugin given as input parameter -->
     <xacro:insert_block name="gazebo"/>
-
-    <!-- Include the thruster modules -->
-    <xacro:include filename="$(find heron_description)/urdf/actuators.xacro"/>
 
     <!-- Include the sensor modules -->
     <xacro:include filename="$(find heron_description)/urdf/sensors.xacro"/>
