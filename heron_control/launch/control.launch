@@ -1,6 +1,12 @@
 <launch>
-   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_node">
-    <rosparam command="load" file="$(find heron_control)/config/robot_localization.yaml" />
+   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_global">
+    <rosparam command="load" file="$(find heron_control)/config/robot_localization_global.yaml" />
+    <remap from="odometry/filtered" to="odometry/global" />
+
+  </node>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_local">
+    <rosparam command="load" file="$(find heron_control)/config/robot_localization_local.yaml" />
   </node>
 
   <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true" output="screen">
