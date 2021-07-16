@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_local">
+    <rosparam command="load" file="$(find heron_control)/config/robot_localization_odom.yaml" />
+  </node>
+
+</launch>
